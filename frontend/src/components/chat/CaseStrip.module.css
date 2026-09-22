@@ -1,0 +1,12 @@
+.strip {
+  position: relative; z-index: 5; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 5px 20px; background: var(--paper-dark); border-bottom: 1px solid var(--paper-line);
+}
+.meta { font-family: var(--font-mono); font-size: 8.5px; letter-spacing: .08em; color: var(--ink-faint); text-transform: uppercase; }
+.stamp {
+  font-family: var(--font-mono); font-size: 9px; font-weight: 700;
+  letter-spacing: .12em; color: var(--stamp-red); border: 1px solid var(--stamp-red);
+  padding: 2px 7px; transform: rotate(-1.5deg); display: inline-block;
+}
+@media (max-width: 600px) { .strip { display: none; } }

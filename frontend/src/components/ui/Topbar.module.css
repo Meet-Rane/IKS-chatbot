@@ -1,0 +1,59 @@
+.topbar {
+  position: relative; z-index: 10; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 10px 20px;
+  border-bottom: 2px solid var(--ink);
+  background: var(--paper-deep);
+}
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brandIcon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  border: 2px solid var(--ink); background: var(--paper);
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 17px; font-weight: 700;
+}
+.brandTitle { font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: .08em; }
+.brandSub { font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; color: var(--ink-soft); text-transform: uppercase; margin-top: 2px; }
+
+.right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+.providerSelect {
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .06em; text-transform: uppercase;
+  border: 1px solid var(--paper-line); background: var(--paper); color: var(--ink-soft);
+  padding: 5px 8px; cursor: pointer; outline: none;
+}
+.providerSelect:hover { border-color: var(--ink); color: var(--ink); }
+
+.modelPill {
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .07em;
+  color: var(--stamp-teal); border: 1px solid var(--stamp-teal);
+  padding: 4px 8px; text-transform: uppercase; display: none;
+}
+@media (min-width: 700px) { .modelPill { display: block; } }
+
+.statusPill {
+  display: flex; align-items: center; gap: 6px;
+  border: 1px solid; padding: 5px 10px;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
+}
+.online { border-color: var(--stamp-teal); color: var(--stamp-teal); }
+.offline { border-color: var(--stamp-red); color: var(--stamp-red); }
+
+.statusDot {
+  width: 6px; height: 6px; border-radius: 50%; background: currentColor;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.clearBtn {
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
+  border: 1px solid var(--ink-faint); background: transparent; color: var(--ink-soft);
+  padding: 5px 10px; cursor: pointer; transition: all .15s ease;
+}
+.clearBtn:hover { border-color: var(--stamp-red); color: var(--stamp-red); }
+
+@media (max-width: 600px) {
+  .brandSub { display: none; }
+  .statusPill { display: none; }
+  .topbar { padding: 8px 14px; }
+}

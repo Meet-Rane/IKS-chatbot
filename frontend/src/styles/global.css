@@ -1,0 +1,46 @@
+:root {
+  --paper: #ece3cd;
+  --paper-deep: #ddd0ac;
+  --paper-line: #c6b58c;
+  --paper-dark: #c8b896;
+  --ink: #1c160f;
+  --ink-soft: #6c5f49;
+  --ink-faint: #9c8e70;
+  --stamp-red: #9a2b26;
+  --stamp-teal: #2a5c4c;
+  --font-mono: "Courier New", "Courier Prime", ui-monospace, monospace;
+  --font-body: Georgia, "Times New Roman", serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Paper grain */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 999;
+  opacity: 0.45; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* Ruled lines */
+body::after {
+  content: "";
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(0,0,0,0.03) 28px);
+}
+
+button { cursor: pointer; font: inherit; }
+textarea { font: inherit; }
+* { scrollbar-width: thin; scrollbar-color: var(--paper-line) transparent; }
+*::-webkit-scrollbar { width: 6px; }
+*::-webkit-scrollbar-thumb { background: var(--paper-line); border-radius: 3px; }
