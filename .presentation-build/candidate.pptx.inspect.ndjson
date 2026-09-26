@@ -1,0 +1,115 @@
+{"kind":"deck","id":"pr/wpcb2i","name":"Deck"}
+{"kind":"layout","layoutId":"cfbad1f6-82d2-4fa9-b96b-9a1efb50e3e1","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"7a63e7e2-1d4d-44f3-b681-0e93bba9d55c","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/dy5gjc","slide":1,"title":"IKS ARCHIVE","textShapes":4}
+{"kind":"textbox","id":"sh/id0jep8b","slide":1,"text":"IKS ARCHIVE","textPreview":"IKS ARCHIVE","textChars":11,"textLines":1,"bbox":[72,65,800,42]}
+{"kind":"textbox","id":"sh/5gr2pk7m","slide":1,"text":"An AI-assisted guide to\nIndian Knowledge Systems","textPreview":"An AI-assisted guide to | Indian Knowledge Systems","textChars":48,"textLines":2,"bbox":[72,145,1110,180]}
+{"kind":"textbox","id":"sh/4fi1gfqh","slide":1,"text":"Project architecture  •  reliability  •  testing  •  limitations","textPreview":"Project architecture  •  reliability  •  testing  •  limitations","textChars":64,"textLines":1,"bbox":[75,377,1080,56]}
+{"kind":"textbox","id":"sh/r29krups","slide":1,"text":"VIVA PRESENTATION","textPreview":"VIVA PRESENTATION","textChars":17,"textLines":1,"bbox":[75,645,800,25]}
+{"kind":"notes","id":"nt/dy5gjc","slide":1,"text":"Introduce the problem: IKS spans many subjects, and beginners need an accessible first point of entry. This is an AI-assisted learning prototype, not a source-verified scholarly archive."}
+{"kind":"slide","id":"sl/ltrq1l","slide":2,"title":"01 / PURPOSE","textShapes":8}
+{"kind":"textbox","id":"sh/uh4jah83","slide":2,"text":"01 / PURPOSE","textPreview":"01 / PURPOSE","textChars":12,"textLines":1,"bbox":[72,35,900,26]}
+{"kind":"textbox","id":"sh/hkf25w7u","slide":2,"text":"The problem and our objective","textPreview":"The problem and our objective","textChars":29,"textLines":1,"bbox":[72,74,1120,80]}
+{"kind":"textbox","id":"sh/gj61crq9","slide":2,"text":"IKS ARCHIVE  •  02","textPreview":"IKS ARCHIVE  •  02","textChars":18,"textLines":1,"bbox":[72,668,420,22]}
+{"kind":"textbox","id":"sh/3mxk76p0","slide":2,"text":"PROBLEM","textPreview":"PROBLEM","textChars":7,"textLines":1,"bbox":[74,205,220,35]}
+{"kind":"textbox","id":"sh/iloje18f","slide":2,"text":"IKS topics and terminology are spread across philosophy, language, mathematics, medicine, and the arts.","textPreview":"IKS topics and terminology are spread across philosophy, language, mathematics, medicine, and the arts.","textChars":103,"textLines":1,"bbox":[74,252,505,190]}
+{"kind":"textbox","id":"sh/p8f29g7q","slide":2,"text":"OBJECTIVE","textPreview":"OBJECTIVE","textChars":9,"textLines":1,"bbox":[678,205,230,35]}
+{"kind":"textbox","id":"sh/4n61gbql","slide":2,"text":"Let a learner ask a natural-language question and receive an understandable, contextual starting answer.","textPreview":"Let a learner ask a natural-language question and receive an understandable, contextual starting answer.","textChars":104,"textLines":1,"bbox":[678,252,505,190]}
+{"kind":"textbox","id":"sh/rahkb6pw","slide":2,"text":"Scope: exploration and explanation — not authenticated research or verified citations.","textPreview":"Scope: exploration and explanation — not authenticated research or verified citations.","textChars":86,"textLines":1,"bbox":[74,554,1080,58]}
+{"kind":"notes","id":"nt/ltrq1l","slide":2,"text":"Explain the use case with a simple example: What is Padapatha? Be explicit that the model can be wrong; academic claims must be checked against trusted sources."}
+{"kind":"slide","id":"sl/smohih","slide":3,"title":"02 / SYSTEM","textShapes":11}
+{"kind":"textbox","id":"sh/g3i58j2l","slide":3,"text":"02 / SYSTEM","textPreview":"02 / SYSTEM","textChars":11,"textLines":1,"bbox":[72,35,900,26]}
+{"kind":"textbox","id":"sh/v29oze10","slide":3,"text":"Architecture at a glance","textPreview":"Architecture at a glance","textChars":24,"textLines":1,"bbox":[72,74,1120,80]}
+{"kind":"textbox","id":"sh/u10n69kv","slide":3,"text":"IKS ARCHIVE  •  03","textPreview":"IKS ARCHIVE  •  03","textChars":18,"textLines":1,"bbox":[72,668,420,22]}
+{"kind":"textbox","id":"sh/t0rmx43a","slide":3,"text":"REACT UI","textPreview":"REACT UI","textChars":8,"textLines":1,"bbox":[76,217,225,40]}
+{"kind":"textbox","id":"sh/8zi54z2p","slide":3,"text":"Question, messages,\nretry and cancel","textPreview":"Question, messages, | retry and cancel","textChars":36,"textLines":2,"bbox":[76,271,225,105]}
+{"kind":"textbox","id":"sh/7y94vul4","slide":3,"text":"FASTAPI","textPreview":"FASTAPI","textChars":7,"textLines":1,"bbox":[374,217,225,40]}
+{"kind":"textbox","id":"sh/6xgn2pkj","slide":3,"text":"Validate request,\nselect provider,\napply timeouts","textPreview":"Validate request, | select provider, | apply timeouts","textChars":49,"textLines":3,"bbox":[374,271,245,135]}
+{"kind":"textbox","id":"sh/lw7mtk3y","slide":3,"text":"AI PROVIDER","textPreview":"AI PROVIDER","textChars":11,"textLines":1,"bbox":[704,217,255,40]}
+{"kind":"textbox","id":"sh/kvy50f2d","slide":3,"text":"Current path: Gemini\nOther adapters:\nOpenAI, Anthropic, Ollama","textPreview":"Current path: Gemini | Other adapters: | OpenAI, Anthropic, Ollama","textChars":62,"textLines":3,"bbox":[704,271,360,145]}
+{"kind":"textbox","id":"sh/it0zats7","slide":3,"text":"POST /api/v1/chat/stream","textPreview":"POST /api/v1/chat/stream","textChars":24,"textLines":1,"bbox":[76,492,420,40]}
+{"kind":"textbox","id":"sh/ju90jy9s","slide":3,"text":"SSE events: meta  →  status  →  delta  →  done / error","textPreview":"SSE events: meta  →  status  →  delta  →  done / error","textChars":54,"textLines":1,"bbox":[76,550,1040,52]}
+{"kind":"notes","id":"nt/smohih","slide":3,"text":"Follow one question end-to-end. The browser sends message history. FastAPI validates it with Pydantic, keeps bounded recent history, adds the IKS prompt, and calls the selected provider. The route emits structured server-sent events. The backend does not store a server-side session."}
+{"kind":"slide","id":"sl/qovzp6","slide":4,"title":"03 / STACK","textShapes":10}
+{"kind":"textbox","id":"sh/gzapwb25","slide":4,"text":"03 / STACK","textPreview":"03 / STACK","textChars":10,"textLines":1,"bbox":[72,35,900,26]}
+{"kind":"textbox","id":"sh/vy18361k","slide":4,"text":"Technology choices","textPreview":"Technology choices","textChars":18,"textLines":1,"bbox":[72,74,1120,80]}
+{"kind":"textbox","id":"sh/uxs7u1kz","slide":4,"text":"IKS ARCHIVE  •  04","textPreview":"IKS ARCHIVE  •  04","textChars":18,"textLines":1,"bbox":[72,668,420,22]}
+{"kind":"textbox","id":"sh/543q9gj2","slide":4,"text":"FRONTEND","textPreview":"FRONTEND","textChars":8,"textLines":1,"bbox":[75,207,230,32]}
+{"kind":"textbox","id":"sh/43up0b2h","slide":4,"text":"React 18 + Vite 5\nResponsive CSS\nlucide-react icons","textPreview":"React 18 + Vite 5 | Responsive CSS | lucide-react icons","textChars":51,"textLines":3,"bbox":[75,257,310,186]}
+{"kind":"textbox","id":"sh/32l87q1w","slide":4,"text":"BACKEND","textPreview":"BACKEND","textChars":7,"textLines":1,"bbox":[458,207,230,32]}
+{"kind":"textbox","id":"sh/i1c7ylkb","slide":4,"text":"Python + FastAPI\nPydantic models\nUvicorn server","textPreview":"Python + FastAPI | Pydantic models | Uvicorn server","textChars":47,"textLines":3,"bbox":[458,257,310,186]}
+{"kind":"textbox","id":"sh/l8j6xwji","slide":4,"text":"INTEGRATION","textPreview":"INTEGRATION","textChars":11,"textLines":1,"bbox":[838,207,230,32]}
+{"kind":"textbox","id":"sh/k7qpor2x","slide":4,"text":"httpx + AI adapters\nSSE over HTTP\nBrowser localStorage","textPreview":"httpx + AI adapters | SSE over HTTP | Browser localStorage","textChars":54,"textLines":3,"bbox":[838,257,330,186]}
+{"kind":"textbox","id":"sh/q9436x8n","slide":4,"text":"Local development: Vite :5173  →  proxy /api  →  FastAPI :8000","textPreview":"Local development: Vite :5173  →  proxy /api  →  FastAPI :8000","textChars":62,"textLines":1,"bbox":[75,555,1090,57]}
+{"kind":"notes","id":"nt/qovzp6","slide":4,"text":"React manages changing chat state, FastAPI gives async routes and validation, and SSE is sufficient for one-way answer delivery. The API key stays in the backend. Browser localStorage is not a server database."}
+{"kind":"slide","id":"sl/7q2bfy","slide":5,"title":"04 / REQUEST FLOW","textShapes":11}
+{"kind":"textbox","id":"sh/9sjyhwnq","slide":5,"text":"04 / REQUEST FLOW","textPreview":"04 / REQUEST FLOW","textChars":17,"textLines":1,"bbox":[72,35,900,26]}
+{"kind":"textbox","id":"sh/mpsf6h4z","slide":5,"text":"What happens when a user asks?","textPreview":"What happens when a user asks?","textChars":30,"textLines":1,"bbox":[72,74,1120,80]}
+{"kind":"textbox","id":"sh/nq1wfm5k","slide":5,"text":"IKS ARCHIVE  •  05","textPreview":"IKS ARCHIVE  •  05","textChars":18,"textLines":1,"bbox":[72,668,420,22]}
+{"kind":"textbox","id":"sh/0nax4rm9","slide":5,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[75,192,50,60]}
+{"kind":"textbox","id":"sh/1ojedwne","slide":5,"text":"React sends recent chat turns as JSON","textPreview":"React sends recent chat turns as JSON","textChars":37,"textLines":1,"bbox":[150,199,950,53]}
+{"kind":"textbox","id":"sh/e18f2h43","slide":5,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[75,284,50,60]}
+{"kind":"textbox","id":"sh/z2hwbm5o","slide":5,"text":"Backend validates, limits history and applies the IKS prompt","textPreview":"Backend validates, limits history and applies the IKS prompt","textChars":60,"textLines":1,"bbox":[150,291,1010,62]}
+{"kind":"textbox","id":"sh/czqx07mx","slide":5,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[75,384,50,60]}
+{"kind":"textbox","id":"sh/d0ze9cni","slide":5,"text":"Selected provider generates an answer","textPreview":"Selected provider generates an answer","textChars":37,"textLines":1,"bbox":[150,392,950,50]}
+{"kind":"textbox","id":"sh/tsbetoje","slide":5,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[75,478,50,60]}
+{"kind":"textbox","id":"sh/sr2dkjit","slide":5,"text":"Browser receives SSE completion or error; UI saves recent chat","textPreview":"Browser receives SSE completion or error; UI saves recent chat","textChars":62,"textLines":1,"bbox":[150,486,1020,74]}
+{"kind":"notes","id":"nt/7q2bfy","slide":5,"text":"Mention the four endpoints: GET /health, GET /providers, POST /chat and POST /chat/stream. The request has user/assistant messages and an optional provider override. The browser sends the history each time; there is no persistent backend chat session."}
+{"kind":"slide","id":"sl/np5lw1","slide":6,"title":"05 / RESPONSE LIFECYCLE","textShapes":8}
+{"kind":"textbox","id":"sh/byt43u94","slide":6,"text":"05 / RESPONSE LIFECYCLE","textPreview":"05 / RESPONSE LIFECYCLE","textChars":23,"textLines":1,"bbox":[72,35,900,26]}
+{"kind":"textbox","id":"sh/cz25wzqp","slide":6,"text":"The reliability fix","textPreview":"The reliability fix","textChars":19,"textLines":1,"bbox":[72,74,1120,80]}
+{"kind":"textbox","id":"sh/d0bm54ra","slide":6,"text":"IKS ARCHIVE  •  06","textPreview":"IKS ARCHIVE  •  06","textChars":18,"textLines":1,"bbox":[72,668,420,22]}
+{"kind":"textbox","id":"sh/290nq58n","slide":6,"text":"BEFORE","textPreview":"BEFORE","textChars":6,"textLines":1,"bbox":[75,195,230,35]}
+{"kind":"textbox","id":"sh/3ut4za9s","slide":6,"text":"Slow first response or an upstream stream ending midway could look like a stuck or finished answer.","textPreview":"Slow first response or an upstream stream ending midway could look like a stuck or finished answer.","textChars":99,"textLines":1,"bbox":[75,247,495,185]}
+{"kind":"textbox","id":"sh/ov25sfqd","slide":6,"text":"NOW","textPreview":"NOW","textChars":3,"textLines":1,"bbox":[680,195,230,35]}
+{"kind":"textbox","id":"sh/pwbm1kry","slide":6,"text":"Explicit status, answer, done and error events; timeout handling; retry, cancel and continue controls.","textPreview":"Explicit status, answer, done and error events; timeout handling; retry, cancel and continue controls.","textChars":102,"textLines":1,"bbox":[680,247,495,185]}
+{"kind":"textbox","id":"sh/e503m58b","slide":6,"text":"A connection closing without done/error is treated as interrupted, not complete.","textPreview":"A connection closing without done/error is treated as interrupted, not complete.","textChars":80,"textLines":1,"bbox":[75,545,1100,71]}
+{"kind":"notes","id":"nt/np5lw1","slide":6,"text":"The backend sends a status heartbeat about every 10 seconds while working. Provider first/idle timeout defaults are 60 seconds, the route has a 180-second deadline, and the browser has a 90-second answer-progress timer. These are safeguards, not a guarantee that the provider is fast."}
+{"kind":"slide","id":"sl/q9alqg","slide":7,"title":"06 / HONEST IMPLEMENTATION","textShapes":7}
+{"kind":"textbox","id":"sh/z2x8vqpw","slide":7,"text":"06 / HONEST IMPLEMENTATION","textPreview":"06 / HONEST IMPLEMENTATION","textChars":26,"textLines":1,"bbox":[72,35,900,26]}
+{"kind":"textbox","id":"sh/036povqh","slide":7,"text":"A crucial Gemini trade-off","textPreview":"A crucial Gemini trade-off","textChars":26,"textLines":1,"bbox":[72,74,1120,80]}
+{"kind":"textbox","id":"sh/l4fqx072","slide":7,"text":"IKS ARCHIVE  •  07","textPreview":"IKS ARCHIVE  •  07","textChars":18,"textLines":1,"bbox":[72,668,420,22]}
+{"kind":"textbox","id":"sh/qdo7il8f","slide":7,"text":"Current Gemini call","textPreview":"Current Gemini call","textChars":19,"textLines":1,"bbox":[75,206,480,47]}
+{"kind":"textbox","id":"sh/rexorqp0","slide":7,"text":"The backend requests one complete JSON response and checks its finish reason before treating it as successful.","textPreview":"The backend requests one complete JSON response and checks its finish reason before treating it as successful.","textChars":110,"textLines":1,"bbox":[75,270,1020,170]}
+{"kind":"textbox","id":"sh/cf6pkvql","slide":7,"text":"STOP = complete    •    MAX_TOKENS = one continuation attempt","textPreview":"STOP = complete    •    MAX_TOKENS = one continuation attempt","textChars":61,"textLines":1,"bbox":[75,475,1075,65]}
+{"kind":"textbox","id":"sh/dgfqt07q","slide":7,"text":"SSE to the browser does not mean live Gemini token streaming.","textPreview":"SSE to the browser does not mean live Gemini token streaming.","textChars":61,"textLines":1,"bbox":[75,566,1050,47]}
+{"kind":"notes","id":"nt/q9alqg","slide":7,"text":"This is the most important technical nuance. The UI can show heartbeats while Gemini works, but first visible answer text arrives after a complete provider response. It improves completeness after premature upstream streaming failures but can increase time to first visible text. Other adapters can stream incrementally."}
+{"kind":"slide","id":"sl/a2kya9","slide":8,"title":"07 / RESPONSIBLE DESIGN","textShapes":10}
+{"kind":"textbox","id":"sh/pg3m5gbq","slide":8,"text":"07 / RESPONSIBLE DESIGN","textPreview":"07 / RESPONSIBLE DESIGN","textChars":23,"textLines":1,"bbox":[72,35,900,26]}
+{"kind":"textbox","id":"sh/2tc3ulsz","slide":8,"text":"State, security and constraints","textPreview":"State, security and constraints","textChars":31,"textLines":1,"bbox":[72,74,1120,80]}
+{"kind":"textbox","id":"sh/3el43qtk","slide":8,"text":"IKS ARCHIVE  •  08","textPreview":"IKS ARCHIVE  •  08","textChars":18,"textLines":1,"bbox":[72,668,420,22]}
+{"kind":"textbox","id":"sh/cjul0va1","slide":8,"text":"CHAT STATE","textPreview":"CHAT STATE","textChars":10,"textLines":1,"bbox":[75,203,275,36]}
+{"kind":"textbox","id":"sh/dknm90bm","slide":8,"text":"Up to 60 messages saved in this browser's localStorage. No accounts or backend chat database.","textPreview":"Up to 60 messages saved in this browser's localStorage. No accounts or backend chat database.","textChars":93,"textLines":1,"bbox":[75,255,305,235]}
+{"kind":"textbox","id":"sh/qhc3ylsb","slide":8,"text":"SECRETS","textPreview":"SECRETS","textChars":7,"textLines":1,"bbox":[465,203,275,36]}
+{"kind":"textbox","id":"sh/ril47qtg","slide":8,"text":"Provider API key belongs in backend .env. CORS restricts origins but is not authentication.","textPreview":"Provider API key belongs in backend .env. CORS restricts origins but is not authentication.","textChars":91,"textLines":1,"bbox":[465,255,305,235]}
+{"kind":"textbox","id":"sh/snalobax","slide":8,"text":"ACADEMIC USE","textPreview":"ACADEMIC USE","textChars":12,"textLines":1,"bbox":[845,203,290,36]}
+{"kind":"textbox","id":"sh/tojmxwbi","slide":8,"text":"The IKS prompt guides answers; citations are not checked against a trusted corpus.","textPreview":"The IKS prompt guides answers; citations are not checked against a trusted corpus.","textChars":82,"textLines":1,"bbox":[845,255,305,235]}
+{"kind":"textbox","id":"sh/xkzadgbu","slide":8,"text":"This is a learning prototype, not a production-grade or source-verified archive.","textPreview":"This is a learning prototype, not a production-grade or source-verified archive.","textChars":80,"textLines":1,"bbox":[75,562,1080,63]}
+{"kind":"notes","id":"nt/a2kya9","slide":8,"text":"Health only proves backend reachability, not AI provider availability. No auth, rate limiting or public deployment safeguards are implemented. Prompt injection and hallucinations remain possible. Never show the real .env or key."}
+{"kind":"slide","id":"sl/w93f1z","slide":9,"title":"08 / EVIDENCE","textShapes":8}
+{"kind":"textbox","id":"sh/k765gnad","slide":9,"text":"08 / EVIDENCE","textPreview":"08 / EVIDENCE","textChars":13,"textLines":1,"bbox":[72,35,900,26]}
+{"kind":"textbox","id":"sh/j6xonits","slide":9,"text":"How we tested it","textPreview":"How we tested it","textChars":16,"textLines":1,"bbox":[72,74,1120,80]}
+{"kind":"textbox","id":"sh/i5onedc7","slide":9,"text":"IKS ARCHIVE  •  09","textPreview":"IKS ARCHIVE  •  09","textChars":18,"textLines":1,"bbox":[72,668,420,22]}
+{"kind":"textbox","id":"sh/twz6tsbu","slide":9,"text":"BACKEND TESTS","textPreview":"BACKEND TESTS","textChars":13,"textLines":1,"bbox":[75,199,350,43]}
+{"kind":"textbox","id":"sh/sbq5kna9","slide":9,"text":"Complete finish\nPremature finish error\nToken-limit continuation\nTerminal SSE error\nDisconnect cleanup","textPreview":"Complete finish | Premature finish error | Token-limit continuation | Terminal SSE error | Disconnect cleanup","textChars":101,"textLines":5,"bbox":[75,263,470,255]}
+{"kind":"textbox","id":"sh/7axorit4","slide":9,"text":"FRONTEND TESTS","textPreview":"FRONTEND TESTS","textChars":14,"textLines":1,"bbox":[680,199,390,43]}
+{"kind":"textbox","id":"sh/69onidsj","slide":9,"text":"Split chunks and Unicode\nCRLF handling\nUnexpected EOF\nError / terminal events","textPreview":"Split chunks and Unicode | CRLF handling | Unexpected EOF | Error / terminal events","textChars":77,"textLines":4,"bbox":[680,263,480,255]}
+{"kind":"textbox","id":"sh/9gvmh8bq","slide":9,"text":"Protocol tests verify handling — not the historical truth of model answers.","textPreview":"Protocol tests verify handling — not the historical truth of model answers.","textChars":75,"textLines":1,"bbox":[75,561,1080,61]}
+{"kind":"notes","id":"nt/w93f1z","slide":9,"text":"Backend tests use unittest. Frontend SSE parser tests use Node's test runner. A live smoke script can test the provider, but a successful sample answer is not a factual-quality evaluation. Before the presentation, rerun tests if dependencies or provider settings changed."}
+{"kind":"slide","id":"sl/qzsk7e","slide":10,"title":"09 / ROADMAP","textShapes":8}
+{"kind":"textbox","id":"sh/tcvqdozy","slide":10,"text":"09 / ROADMAP","textPreview":"09 / ROADMAP","textChars":12,"textLines":1,"bbox":[72,35,900,26]}
+{"kind":"textbox","id":"sh/6pk72907","slide":10,"text":"Limitations and the next version","textPreview":"Limitations and the next version","textChars":32,"textLines":1,"bbox":[72,74,1120,80]}
+{"kind":"textbox","id":"sh/7qt8behs","slide":10,"text":"IKS ARCHIVE  •  10","textPreview":"IKS ARCHIVE  •  10","textChars":18,"textLines":1,"bbox":[72,668,420,22]}
+{"kind":"textbox","id":"sh/gfmp83y9","slide":10,"text":"LIMITATIONS TODAY","textPreview":"LIMITATIONS TODAY","textChars":17,"textLines":1,"bbox":[75,204,475,42]}
+{"kind":"textbox","id":"sh/hgvqhozu","slide":10,"text":"Model can be inaccurate\nNo verified citations or RAG\nProvider latency / quota\nLocal-only chat history\nNo public-service safeguards","textPreview":"Model can be inaccurate | No verified citations or RAG | Provider latency / quota | Local-only chat history | No public-service safeguards","textChars":130,"textLines":5,"bbox":[75,263,485,285]}
+{"kind":"textbox","id":"sh/ud476t03","slide":10,"text":"NEXT STEPS","textPreview":"NEXT STEPS","textChars":10,"textLines":1,"bbox":[680,204,460,42]}
+{"kind":"textbox","id":"sh/fed8fyho","slide":10,"text":"Curated IKS source corpus\nPassage-linked retrieval\nExpert answer evaluation\nProvider monitoring\nAuth and rate limits","textPreview":"Curated IKS source corpus | Passage-linked retrieval | Expert answer evaluation | Provider monitoring | Auth and rate limits","textChars":116,"textLines":5,"bbox":[680,263,500,285]}
+{"kind":"textbox","id":"sh/wjipwzi5","slide":10,"text":"Future features are proposals, not current implementation.","textPreview":"Future features are proposals, not current implementation.","textChars":58,"textLines":1,"bbox":[75,574,1080,50]}
+{"kind":"notes","id":"nt/qzsk7e","slide":10,"text":"This slide shows technical maturity: do not overclaim. The most important academic improvement is retrieval from trusted passages with independently checked citations and expert evaluation."}
+{"kind":"slide","id":"sl/kkwg1t","slide":11,"title":"DEMO & DISCUSSION","textShapes":5}
+{"kind":"textbox","id":"sh/pk7y5or2","slide":11,"text":"DEMO & DISCUSSION","textPreview":"DEMO & DISCUSSION","textChars":17,"textLines":1,"bbox":[75,65,920,43]}
+{"kind":"textbox","id":"sh/2xwzut8r","slide":11,"text":"Ask. Inspect. Verify.","textPreview":"Ask. Inspect. Verify.","textChars":21,"textLines":1,"bbox":[75,155,1100,82]}
+{"kind":"textbox","id":"sh/nypg3e9c","slide":11,"text":"Demo question: “What is Padapatha?”","textPreview":"Demo question: “What is Padapatha?”","textChars":35,"textLines":1,"bbox":[75,293,1040,55]}
+{"kind":"textbox","id":"sh/0vehsjql","slide":11,"text":"Show the answer and completion state. Then explain why source claims still require verification.","textPreview":"Show the answer and completion state. Then explain why source claims still require verification.","textChars":96,"textLines":1,"bbox":[75,385,1065,135]}
+{"kind":"textbox","id":"sh/1wny1or6","slide":11,"text":"Thank you","textPreview":"Thank you","textChars":9,"textLines":1,"bbox":[75,620,800,45]}
+{"kind":"notes","id":"nt/kkwg1t","slide":11,"text":"Before the demo, start frontend and backend manually and check a valid provider key/quota. They were stopped on user request and are not assumed running. Keep screenshots as backup. If asked what makes this innovative, emphasize response-completion handling and honest error states rather than claiming a new model or verified archive."}

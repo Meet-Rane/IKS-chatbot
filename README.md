@@ -1,7 +1,22 @@
 # IKS Archive — Indian Knowledge Systems Chatbot
 
 Full-stack AI chatbot for Indian Knowledge Systems (IKS) subject.
-Beige dossier UI · FastAPI backend · React+Vite frontend · Flexible AI provider.
+Responsive sage-and-white UI · FastAPI backend · React+Vite frontend · Flexible AI provider.
+
+Chat saves the current conversation on the device and
+offers Stop, Retry, Copy, and Continue actions. Gemini responses are checked for
+an explicit completion signal. Gemini uses complete JSON responses to avoid
+intermittently truncated upstream SSE streams; the browser receives progress events
+while waiting. An output limit triggers one automatic continuation;
+persistent failures preserve any partial answer and show
+an actionable error. Provider safety stops are not automatically retried.
+
+### Verification
+
+Run backend regression tests with `python -m unittest test_streaming -v` from
+`backend`, and stream-parser tests with `node --test src/api/chat.test.mjs`
+from `frontend`. `python check_stream.py` runs two live Gemini queries and
+reports first-text and completion timing (uses the configured API key/quota).
 
 ## Project Structure
 
